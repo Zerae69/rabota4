@@ -21,8 +21,39 @@ def main():
 
         choice = input("Выбор: ")
 
+        if choice == "1":
+            add_book()
+
+
+
+
+
+
+
+
+
+
+
         if choice == "6":
             break
 
 if __name__ == "__main__":
     main()
+
+def add_book():
+    books = load_books()
+
+    author = input("Автор: ")
+    title = input("Название: ")
+    rating = int(input("Оценка (1-5): "))
+    date = input("Дата: ")
+
+    books.append({
+        "author": author,
+        "title": title,
+        "rating": rating,
+        "date": date
+    })
+
+    save_books(books)
+    print("Книга добавлена")
