@@ -48,6 +48,11 @@ def add_book():
     rating = int(input("Оценка (1-5): "))
     date = input("Дата: ")
 
+    for book in books:
+        if book["author"] == author and book["title"] == title:
+            print("Такая книга уже есть!")
+            return
+
     books.append({
         "author": author,
         "title": title,
