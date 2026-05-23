@@ -23,18 +23,15 @@ def main():
 
         if choice == "1":
             add_book()
-
-
-
-
-
-
-
-
-
-
-
-        if choice == "6":
+        elif choice == "2":
+            show_books()
+        elif choice == "3":
+            average_rating()
+        elif choice == "4":
+            author_stats()
+        elif choice == '5':
+            delete_book()
+        elif choice == "6":
             break
 
 if __name__ == "__main__":
