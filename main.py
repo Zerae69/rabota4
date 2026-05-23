@@ -12,11 +12,21 @@ def add_book():
     title = input("Название: ")
     rating = int(input("Оценка (1-5): "))
     date = input("Дата: ")
+def delete_book():
+    books = load_books()
 
 def save_books(books):
     with open(FILE, "w", encoding="utf-8") as f:
         json.dump(books, f, ensure_ascii=False, indent=2)
+    title = input("Название книги для удаления: ")
 
+    new_books = []
+    for b in books:
+        if b["title"] != title:
+            new_books.append(b)
+
+    save_books(new_books)
+    print("Удалено")
 def main():
     while True:
         print("1. Добавить книгу")
